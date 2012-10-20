@@ -1,3 +1,5 @@
+require "./lib/artist"
+
 def test(title, &b)
   begin
     if b
