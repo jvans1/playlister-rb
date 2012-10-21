@@ -1,4 +1,4 @@
-require "./lib/artist"
+require "./lib/arist"
 
 def test(title, &b)
   begin
@@ -20,7 +20,6 @@ def test(title, &b)
     puts e
   end
 end
-
 def assert(statement)
   !!statement
 end
@@ -137,7 +136,9 @@ test 'A genre has many artists' do
     song.genre = genre
     artist.add_song(song)
   end
-
+## add artist to genre
+## artist to song.genre.artists
+## 
   assert_equal genre.artists.count, 2
 end
 
@@ -153,6 +154,7 @@ test 'A genres Artists are unique' do
 
   assert_equal genre.artists.count, 1
 end
+
 
 # Same behavior as Artists
 test 'The Genre class can keep track of all created genres' do
@@ -172,8 +174,16 @@ end
 # without your song class having this functionality, so go ahead and try
 # to use assert and assert_equal to write some tests.
 
-test 'Can initialize a song'
-test 'A song can have a name'
+test 'Can initialize a song' do
+  song = Song.new
+  assert song
+end
+
+test 'A song can have a name'  do
+  song = Song.new
+  song.name = "Summertime"
+  assert_equal song.name, "Summertime"
+end
 test 'A song can have a genre'
 test 'A song has an artist'
 

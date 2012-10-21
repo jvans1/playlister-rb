@@ -3,7 +3,6 @@ class Artist
 	@@artists = []
 
 	def initialize
-		@@artist << self.name
 		@genres = []
 	end
 
@@ -11,9 +10,13 @@ class Artist
 		@@artist.length
 	end		
 
-	def reset_artist
+	def reset_artists
 		@@artist = []
 		
+	end
+
+	def all
+		@@artists || []
 	end
 
 	def songs_count
