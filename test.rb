@@ -184,8 +184,17 @@ test 'A song can have a name'  do
   song.name = "Summertime"
   assert_equal song.name, "Summertime"
 end
-test 'A song can have a genre'
-test 'A song has an artist'
+test 'A song can have a genre' do
+  song = Song.new
+  assert song.genre
+end
+
+test 'A song has an artist' do
+  song =  Song.new
+  artist = Artist.new
+  artist.add_song(song)
+  assert_equal song.artist, artist
+end
 
 # Part 2: Site Generation Using ERB
 # write a ruby script that parses the data within the data directory

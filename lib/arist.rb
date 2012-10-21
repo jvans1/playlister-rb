@@ -28,12 +28,13 @@ class Artist
 	end
 
 	def songs_count
-		@songs.length
+		self.songs.length
 	end
 
 	def add_song(song)
-		@songs << song
-		@genres << song.genre
+		self.songs << song
+		self.genres << song.genre
+		song.artist = self
 		add_artist_to_genre(song.genre)	
 	end
 
