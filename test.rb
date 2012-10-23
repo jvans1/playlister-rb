@@ -1,5 +1,6 @@
-require "./lib/arist"
-
+require "./arist"
+require "./song"
+require "./Genre"
 def test(title, &b)
   begin
     if b
@@ -186,6 +187,7 @@ test 'A song can have a name'  do
 end
 test 'A song can have a genre' do
   song = Song.new
+  song.genre = Genre.new
   assert song.genre
 end
 
