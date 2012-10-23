@@ -48,4 +48,3 @@ def parse_text
 		artist.add_song(song)
 	end
 end
-Artist.all.sort{artist.name}

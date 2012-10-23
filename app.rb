@@ -16,8 +16,12 @@ get '/artists' do
 end
 
 get '/genres' do
+
 	erb :genres
 end
 
-
+get '/artists/:artist' do |artist|
+	@artist = assign_artist(artist)
+	erb :songs
+end
 
