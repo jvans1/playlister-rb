@@ -2,9 +2,6 @@ require "./arist"
 require "./song"
 require "./Genre"
 
-@artists = []##Call class instance variable isntead
-@genres = []
-
 def assign_artist(artist_name)
 	unless Artist.all.length > 0
 		Artist.new.tap{|artist| artist.name = artist_name} 
@@ -31,15 +28,14 @@ def assign_genre(genre_name)
 			end
 		end
 		Genre.new.tap{|genre| genre.name = genre_name
-			puts genre.name
 		}
 	end
 end
 
 
-file = Dir.open("./data")
 
-def parse_text(file)
+def parse_text
+	file = Dir.open("./data")
 	file.each do |file|
 		artist_name, song_and_genre_name = file.split(" - ")
 		song_title, genre_name = song_and_genre_name.to_s.split("[")
@@ -55,6 +51,5 @@ def parse_text(file)
 end
 
 file = Dir.open("./data")
-parse_text(file)
 puts Artist.count
 puts Genre.all.count

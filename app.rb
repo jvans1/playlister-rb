@@ -1,9 +1,19 @@
 require 'rubygems'
 require 'sinatra'
-require './index'
-
-get "/index" do
-	
+require './parse_data'
+get '/' do
+	erb :index
 end
 
-get "/index/artists" do 
+get '/artists' do
+	parse_text
+	@artists = Arists.all 
+	erb :artists
+end
+
+get '/genres' do
+	erb :genres
+end
+
+
+
