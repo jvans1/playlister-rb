@@ -1,4 +1,4 @@
-require "./arist"
+require "./artist"
 require "./song"
 require "./Genre"
 def test(title, &b)

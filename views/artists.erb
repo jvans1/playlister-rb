@@ -6,8 +6,17 @@
 
 <body>
 	<h1>Ruby Playlister</h1>
-	<h3>Artists</h3>
-	<h3>Genres</h3>
+	<h2>Artists</h2>
+	<h3><%=@artist_count%></h3>
+	<ul>
+	<%@artists.each do |artist| %>
+
+		<h2><%=artist.name %></h2>
+		<li><%=artist.songs.count%></li>
+	<%end%>
+
+	</ul>
+
 
 </body>
 </html>

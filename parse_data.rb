@@ -1,4 +1,4 @@
-require "./arist"
+require "./artist"
 require "./song"
 require "./Genre"
 
@@ -33,7 +33,6 @@ def assign_genre(genre_name)
 end
 
 
-
 def parse_text
 	file = Dir.open("./data")
 	file.each do |file|
@@ -49,7 +48,4 @@ def parse_text
 		artist.add_song(song)
 	end
 end
-
-file = Dir.open("./data")
-puts Artist.count
-puts Genre.all.count
+Artist.all.sort{artist.name}
