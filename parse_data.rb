@@ -3,37 +3,19 @@ require "./song"
 require "./Genre"
 
 def assign_artist(artist_name)
-	unless Artist.all.length > 0
-		Artist.new.tap{|artist| artist.name = artist_name}
+	if 	artist = Artist.all.detect{|artist| artist.name == artist_name} 
+		artist
 	else
-		Artist.all.each do |artist| 
-			if artist.name == artist_name
-				puts "reassigning artist" artist.name 
-				return artist
-
-			else
-				next
-			end
-		end
 		Artist.new.tap{|artist| artist.name = artist_name}
 	end
 end
 def assign_genre(genre_name)
-	unless Genre.all.length > 0
-		Genre.new.tap{|genre| genre.name = genre_name} 
+	if genre = Genre.all.detect{|genre| genre.name == genre_name} 
+		genre
 	else
-		Genre.all.each do |genre| 
-			if genre.name == genre_name
-				return genre
-			else
-				next
-			end
-		end
-		Genre.new.tap{|genre| genre.name = genre_name
-		}
+		Genre.new.tap{|genre| genre.name = genre_name}
 	end
 end
-
 
 def parse_text
 	file = Dir.open("./data")
@@ -51,3 +33,6 @@ def parse_text
 	end
 end
 parse_text
+
+puts Artist.count
+puts Genre.all.count
