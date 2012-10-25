@@ -41,10 +41,10 @@ class Artist
 	def add_artist_to_genre(genre)
 		if genre
 			genre.artists << self unless genre.artists.include?(self)
-		end
-
-		
+		end		
 	end
 
-
+	def self.find_by_artist_name(artist)
+		Artist.all.detect {|a| a.name == artist}
+	end
 end

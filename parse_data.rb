@@ -4,11 +4,13 @@ require "./Genre"
 
 def assign_artist(artist_name)
 	unless Artist.all.length > 0
-		Artist.new.tap{|artist| artist.name = artist_name} 
+		Artist.new.tap{|artist| artist.name = artist_name}
 	else
 		Artist.all.each do |artist| 
 			if artist.name == artist_name
+				puts "reassigning artist" artist.name 
 				return artist
+
 			else
 				next
 			end
@@ -48,3 +50,4 @@ def parse_text
 		artist.add_song(song)
 	end
 end
+parse_text

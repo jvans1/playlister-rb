@@ -1,12 +1,12 @@
 	<!DOCTYPE html>
 <html>
 	<head>
-		<title>Song Page</title>
+		<title>Artist page</title>
 	</head>
 
 <body>
-	<h1><%=@artist.name%></h1>
-	<%artist.songs.each do |song| %>
+	<h1><%=@curr_artist.name%></h1>
+	<%@artist.songs.each do |song| %>
 	<li><%=song.name %></li>
 	<li><%=song.genre%></li>
 	<%end%>

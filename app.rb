@@ -16,12 +16,14 @@ get '/artists' do
 end
 
 get '/genres' do
-
+	parse_text
+	@genres = Genre.all
 	erb :genres
 end
 
 get '/artists/:artist' do |artist|
-	@artist = assign_artist(artist)
-	erb :songs
+	@curr_artist = Artist.find_by_artist_name(artist)
+	erb :artist
 end
+
 

@@ -5,7 +5,14 @@
 	</head>
 
 <body>
-	<h1>Artists</h1>
-	
+	<h1>Genres</h1>
+	<%@genres.each do |genre|%>
+
+	<ul>
+
+		<li><%=genre.name%>: <%=genre.songs.count%> songs, <%=genre.artists.count%> artists</li>
+	</ul>	
+	<%end%>
+
 </body>
 </html>

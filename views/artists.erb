@@ -1,4 +1,4 @@
-	<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 	<head>
 		<title>Playlister</title>
@@ -10,13 +10,8 @@
 	<h3><%=@artist_count%></h3>
 	<ul>
 	<%@artists.each do |artist| %>
-
-		<h2><a href = './artist/'<%=artist.name %></h2><a>
+	<h2><a href = './artists/'><%=artist.name %></h2><a>
 		<li><%=artist.songs.count%></li>
-		<%artist.songs.each do |song| %>
-		<li><%=song.name %></li>
-			<%end%>
-
 	<%end%>
 	</ul>
 
